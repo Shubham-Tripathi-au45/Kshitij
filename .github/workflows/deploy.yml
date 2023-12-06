@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -37,7 +37,7 @@ jobs:
           username:${{secrets.USERNAME}}
           script:|
           pm2 delete all
-          cd/var/app/Kshitij
+          cd/var/app/Kshitij/server
           git pull
           npm install
           pm2 start npm -- start
